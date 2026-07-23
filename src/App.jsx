@@ -79,6 +79,7 @@ function App() {
   const [contactEmail, setContactEmail] = useState('');
   const [contactMessage, setContactMessage] = useState('');
   const [contactFeedback, setContactFeedback] = useState('');
+  const [scrollY, setScrollY] = useState(0);
 
   const accent = theme.palette.primary.main;
 
@@ -98,19 +99,33 @@ function App() {
     { number: '07', title: 'Support', description: 'Provide continuity, monitoring and incremental improvements.' },
   ];
 
+  const heroTextOffset = Math.max(-scrollY * 0.08, -40);
+  const heroImageOffset = Math.min(scrollY * 0.18, 45);
+  const heroCardOffset = Math.min(scrollY * 0.25, 70);
+
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll('section[id]'));
 
+    let ticking = false;
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 140;
-      const currentSection = sections.reduce((closest, section) => {
-        if (section.offsetTop <= scrollPosition) {
-          return section.id;
-        }
-        return closest;
-      }, 'home');
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          setScrollY(currentScrollY);
 
-      setActiveSection(currentSection);
+          const scrollPosition = currentScrollY + 140;
+          const currentSection = sections.reduce((closest, section) => {
+            if (section.offsetTop <= scrollPosition) {
+              return section.id;
+            }
+            return closest;
+          }, 'home');
+
+          setActiveSection(currentSection);
+          ticking = false;
+        });
+      }
     };
 
     handleScroll();
@@ -410,52 +425,54 @@ function App() {
           <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
             <Grid item xs={12} lg={6}>
               <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    textTransform: 'uppercase',
-                    letterSpacing: 2,
-                    mb: 3,
-                    color: accent,
-                    fontWeight: 700,
-                  }}
-                >
-                  Accelerate. Build. Innovate. Rise. Achieve.
-                </Typography>
-                <Typography
-                  variant="h1"
-                  sx={{
-                    fontSize: { xs: '3.5rem', sm: '4.5rem', md: '5.25rem' },
-                    lineHeight: 0.95,
-                    letterSpacing: '-0.04em',
-                    mb: 2,
-                  }}
-                >
-                  VAIBHAV
-                  <br />
-                  NAWALE
-                </Typography>
-                <Typography
-                  variant="h5"
-                  sx={{
-                    mb: 4,
-                    color: mode === 'light' ? '#5F4A3B' : '#D8C2AA',
-                    fontWeight: 700,
-                  }}
-                >
-                  Full Stack .NET Developer building reliable software for modern teams.
-                </Typography>
-                <Typography sx={{ maxWidth: 620, color: 'text.secondary', mb: 5, fontSize: { xs: '1rem', md: '1.05rem' } }}>
-                  {heroQuote}
-                </Typography>
-                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-                  <Button variant="contained" size="large" href="#projects">
-                    View Projects
-                  </Button>
-                  <Button variant="outlined" size="large" onClick={openContactDialog}>
-                    Contact Me
-                  </Button>
-                </Stack>
+                <Box sx={{ transform: `translateY(${heroTextOffset}px)`, transition: 'transform 180ms ease-out' }}>
+                  <Typography
+                    variant="subtitle2"
+                    sx={{
+                      textTransform: 'uppercase',
+                      letterSpacing: 2,
+                      mb: 3,
+                      color: accent,
+                      fontWeight: 700,
+                    }}
+                  >
+                    Accelerate. Build. Innovate. Rise. Achieve.
+                  </Typography>
+                  <Typography
+                    variant="h1"
+                    sx={{
+                      fontSize: { xs: '3.5rem', sm: '4.5rem', md: '5.25rem' },
+                      lineHeight: 0.95,
+                      letterSpacing: '-0.04em',
+                      mb: 2,
+                    }}
+                  >
+                    VAIBHAV
+                    <br />
+                    NAWALE
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      mb: 4,
+                      color: mode === 'light' ? '#5F4A3B' : '#D8C2AA',
+                      fontWeight: 700,
+                    }}
+                  >
+                    Full Stack .NET Developer building reliable software for modern teams.
+                  </Typography>
+                  <Typography sx={{ maxWidth: 620, color: 'text.secondary', mb: 5, fontSize: { xs: '1rem', md: '1.05rem' } }}>
+                    {heroQuote}
+                  </Typography>
+                  <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                    <Button variant="contained" size="large" href="#projects">
+                      View Projects
+                    </Button>
+                    <Button variant="outlined" size="large" onClick={openContactDialog}>
+                      Contact Me
+                    </Button>
+                  </Stack>
+                </Box>
               </motion.div>
 
               <Grid container spacing={2} sx={{ mt: 8 }}>
@@ -481,7 +498,7 @@ function App() {
             </Grid>
 
             <Grid item xs={12} lg={6}>
-              <Box sx={{ position: 'relative', mx: 'auto', maxWidth: 520, mt: { xs: 4, lg: 0 } }}>
+              <Box sx={{ position: 'relative', mx: 'auto', maxWidth: 520, mt: { xs: 4, lg: 0 }, transform: `translateY(${heroImageOffset}px)`, transition: 'transform 180ms ease-out' }}>
                 <Box
                   sx={{
                     position: 'absolute',
@@ -493,6 +510,7 @@ function App() {
                     top: -36,
                     right: -36,
                     filter: 'blur(64px)',
+                    transform: `translateY(${heroCardOffset * 0.75}px)`,
                   }}
                 />
                 <motion.div

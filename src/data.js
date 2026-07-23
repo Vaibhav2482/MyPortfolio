@@ -25,6 +25,24 @@ export const experienceItems = [
 
 export const projects = [
   {
+    title: 'Restaurant Ordering System',
+    subtitle: 'Online Food Ordering & Restaurant Management Platform',
+    description:
+      'A full-stack restaurant ordering platform that enables customers to browse menus, place orders, manage addresses, and securely authenticate. The system provides an admin panel for managing categories, menu items, and customer orders with real-time order tracking.',
+    tags: [
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'REST API',
+      'JWT Authentication',
+      'Repository Pattern'
+    ],
+    details:
+      'Developed secure REST APIs for customer registration, login, address management, category and menu management, and order processing. Implemented JWT-based authentication, Repository Pattern architecture, PostgreSQL database integration, and real-time order status updates for efficient restaurant operations. Built a responsive React admin dashboard for managing orders, customers, menus, and categories.',
+    liveUrl: 'https://chaichakhna-client.vercel.app/',
+  },
+  {
     title: 'Abira Technologies Pvt. Ltd.',
     subtitle: 'Bussiness portal',
     description:
@@ -67,34 +85,20 @@ export const projects = [
       'Developed secure REST APIs and role-based modules for leave applications, manager approvals, leave history, and reporting. Implemented database operations using Entity Framework Core and SQL Server to ensure efficient and reliable leave management.',
     liveUrl: 'https://your-leave-management-system.com',
   },
-  {
-    title: 'Labour management System',
-    subtitle: 'Workforce Management Platform',
-    description:
-      'A comprehensive workforce management system designed to streamline labor operations, attendance tracking, payroll processes, and performance monitoring.',
-    tags: [
-      'React',
-      'ASP.NET Core',
-      'C#',
-      'SQL Server',
-      'REST API',
-      'Entity Framework Core',
-      'Material UI'
-    ],
-    details:
-      'Built and maintained features including Time & Attendance, Leave Management, Payroll Automation, user authentication, dashboard reporting, and SQL-based data processing. Collaborated on bug fixes, performance optimization, and production support.',
-    liveUrl: 'https://your-labour-management-site.com',
-  }
+
 ];
 
 export const technologyTags = [
   'ASP.NET Core',
   'C#',
   'React.js',
-  'JavaScript',
+  'Node.js',
   'SQL Server',
   'Entity Framework Core',
   'REST API',
+  'Express.js',
+  'PostgreSQL',
+  'JavaScript',
   'JWT',
   'Git',
   'GitHub',
