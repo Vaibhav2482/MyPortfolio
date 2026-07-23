@@ -16,7 +16,7 @@ export const heroStats = [
 export const experienceItems = [
   {
     role: 'Full Stack .NET Developer',
-    company: 'Abira Technologies Pvt. Ltd.',
+    company: 'Sanyu Infotech Pvt. Ltd.',
     dates: 'Dec 2025 – Present',
     focus:
       'Building enterprise applications with ASP.NET Core, SQL Server, JWT authentication, and polished React user experiences.',
@@ -59,17 +59,7 @@ export const projects = [
       'Built secure and scalable modules for user management, workflow automation, dashboard analytics, document tracking, and role-based access control, enabling efficient business operations and data-driven decision making.',
     liveUrl: 'https://www.eaglehitec.com/',
   },
-    {
-    title: 'Abira Technologies Pvt. Ltd.',
-    subtitle: 'Bussiness portal',
-    description:
-      'A centralized business management portal designed to streamline operations, employee workflows, client interactions, and organizational reporting.',
-    tags: ['React', 'ASP.NET Core', 'SQL Server'],
-    details:
-      'Developed a scalable enterprise portal featuring role-based authentication, employee management, dashboard analytics, document handling, and real-time business insights for improved operational efficiency.',
-    liveUrl: 'https://abira-tech.vercel.app/',
-  },
-{
+  {
   title: 'RestroOS',
   subtitle: 'Restaurant Management & Online Ordering Platform',
   description:
@@ -86,6 +76,17 @@ export const projects = [
     'Developed a complete restaurant operations platform with separate storefront, tenant-admin, and platform-admin modules. Implemented secure authentication, role-based access control, menu and category management, branch management, table management, cart and checkout workflows, coupon handling, customer addresses, order processing, payment integration, image uploads, and multi-tenant restaurant administration.',
   liveUrl: 'https://storefront-liard-ten.vercel.app/ccc',
 }
+  //   {
+  //   title: 'Abira Technologies Pvt. Ltd.',
+  //   subtitle: 'Bussiness portal',
+  //   description:
+  //     'A centralized business management portal designed to streamline operations, employee workflows, client interactions, and organizational reporting.',
+  //   tags: ['React', 'ASP.NET Core', 'SQL Server'],
+  //   details:
+  //     'Developed a scalable enterprise portal featuring role-based authentication, employee management, dashboard analytics, document handling, and real-time business insights for improved operational efficiency.',
+  //   liveUrl: 'https://abira-tech.vercel.app/',
+  // },
+
 
 ];
 
