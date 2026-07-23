@@ -43,16 +43,6 @@ export const projects = [
     liveUrl: 'https://chaichakhna-client.vercel.app/',
   },
   {
-    title: 'Abira Technologies Pvt. Ltd.',
-    subtitle: 'Bussiness portal',
-    description:
-      'A centralized business management portal designed to streamline operations, employee workflows, client interactions, and organizational reporting.',
-    tags: ['React', 'ASP.NET Core', 'SQL Server'],
-    details:
-      'Developed a scalable enterprise portal featuring role-based authentication, employee management, dashboard analytics, document handling, and real-time business insights for improved operational efficiency.',
-    liveUrl: 'https://abira-tech.vercel.app/',
-  },
-  {
     title: 'Eagle HiTech Pvt. Ltd.',
     subtitle: 'Business Management Portal',
     description:
@@ -69,22 +59,33 @@ export const projects = [
       'Built secure and scalable modules for user management, workflow automation, dashboard analytics, document tracking, and role-based access control, enabling efficient business operations and data-driven decision making.',
     liveUrl: 'https://www.eaglehitec.com/',
   },
-  {
-    title: 'Leave Management System',
-    subtitle: 'Employee Leave & Approval Management',
+    {
+    title: 'Abira Technologies Pvt. Ltd.',
+    subtitle: 'Bussiness portal',
     description:
-      'A web-based application that simplifies employee leave requests, approval workflows, leave balance tracking, and organizational reporting.',
-    tags: [
-      'ASP.NET Core',
-      'C#',
-      'SQL Server',
-      'REST API',
-      'Entity Framework Core'
-    ],
+      'A centralized business management portal designed to streamline operations, employee workflows, client interactions, and organizational reporting.',
+    tags: ['React', 'ASP.NET Core', 'SQL Server'],
     details:
-      'Developed secure REST APIs and role-based modules for leave applications, manager approvals, leave history, and reporting. Implemented database operations using Entity Framework Core and SQL Server to ensure efficient and reliable leave management.',
-    liveUrl: 'https://your-leave-management-system.com',
+      'Developed a scalable enterprise portal featuring role-based authentication, employee management, dashboard analytics, document handling, and real-time business insights for improved operational efficiency.',
+    liveUrl: 'https://abira-tech.vercel.app/',
   },
+{
+  title: 'RestroOS',
+  subtitle: 'Restaurant Management & Online Ordering Platform',
+  description:
+    'A multi-tenant web-based restaurant management platform that helps restaurants manage menus, branches, orders, customers, tables, coupons, payments, and online ordering from a centralized system.',
+  tags: [
+    'React',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'REST API',
+    'Cloudinary'
+  ],
+  details:
+    'Developed a complete restaurant operations platform with separate storefront, tenant-admin, and platform-admin modules. Implemented secure authentication, role-based access control, menu and category management, branch management, table management, cart and checkout workflows, coupon handling, customer addresses, order processing, payment integration, image uploads, and multi-tenant restaurant administration.',
+  liveUrl: 'https://storefront-liard-ten.vercel.app/ccc',
+}
 
 ];
 
